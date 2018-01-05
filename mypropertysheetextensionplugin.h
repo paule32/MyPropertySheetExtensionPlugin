@@ -1,37 +1,36 @@
 #ifndef MYPROPERTYSHEETEXTENSIONPLUGIN_H
 #define MYPROPERTYSHEETEXTENSIONPLUGIN_H
 
-#include <QDesignerCustomWidgetInterface>
-#include <QtDesigner/QDesignerPropertySheetExtension>
+//#include <QDesignerCustomWidgetInterface>
+//#include <QtDesigner/QDesignerPropertySheetExtension>
+#include <QtUiPlugin/QDesignerCustomWidgetInterface>
 
 class MyPropertySheetExtensionPlugin
     : public QObject
-    , public QDesignerPropertySheetExtension
+//  , public QDesignerPropertySheetExtension
     , public QDesignerCustomWidgetInterface
 {
     Q_OBJECT
-    Q_INTERFACES(QDesignerCustomWidgetInterface)
-#if QT_VERSION >= 0x050000
     Q_PLUGIN_METADATA(IID "org.qt-project.Qt.QDesignerCustomWidgetInterface")
-#endif // QT_VERSION >= 0x050000
+    Q_INTERFACES(QDesignerCustomWidgetInterface)
     
 public:
-    MyPropertySheetExtensionPlugin(QObject *parent = 0);
+    explicit MyPropertySheetExtensionPlugin(QObject *parent = 0);
     
-    bool isContainer() const;
-    bool isInitialized() const;
-    QIcon icon() const;
-    QString domXml() const;
-    QString group() const;
-    QString includeFile() const;
-    QString name() const;
-    QString toolTip() const;
-    QString whatsThis() const;
-    QWidget *createWidget(QWidget *parent);
-    void initialize(QDesignerFormEditorInterface *core);
+    bool isContainer() const override;
+    bool isInitialized() const override;
+    QIcon icon() const override;
+    QString domXml() const override;
+    QString group() const override;
+    QString includeFile() const override;
+    QString name() const override;
+    QString toolTip() const override;
+    QString whatsThis() const override;
+    QWidget *createWidget(QWidget *parent) override;
+    void initialize(QDesignerFormEditorInterface *core) override;
     
 private:
-    bool m_initialized;
+    bool m_initialized = false;
 };
 
 #endif

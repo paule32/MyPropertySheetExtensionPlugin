@@ -2,8 +2,10 @@ CONFIG      += plugin debug
 TARGET      = PopupMenu
 TEMPLATE    = lib
 
-HEADERS     += popupmenuplugin.h  mypropertysheetextensionplugin.h
-SOURCES     += popupmenuplugin.cc mypropertysheetextensionplugin.cc
+HEADERS     += popupmenuplugin.h  mypropertysheetextensionplugin.h \
+    mysheet.h
+SOURCES     += popupmenuplugin.cc mypropertysheetextensionplugin.cc \
+    mysheet.cc
 RESOURCES   += icons.qrc 
 LIBS        += -L. 
 

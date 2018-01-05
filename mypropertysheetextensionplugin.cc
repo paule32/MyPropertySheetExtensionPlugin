@@ -1,3 +1,4 @@
+#include "mysheet.h"
 #include "mypropertysheetextension.h"
 #include "mypropertysheetextensionplugin.h"
 
@@ -26,17 +27,17 @@ bool MyPropertySheetExtensionPlugin::isInitialized() const
 
 QWidget *MyPropertySheetExtensionPlugin::createWidget(QWidget *parent)
 {
-    return new MyPropertySheetExtension(parent);
+    return new MySheet(parent);
 }
 
 QString MyPropertySheetExtensionPlugin::name() const
 {
-    return QLatin1String("MyPropertySheetExtension");
+    return QLatin1String("MyPropertySheet");
 }
 
 QString MyPropertySheetExtensionPlugin::group() const
 {
-    return QLatin1String("Designer [kallup]");
+    return QLatin1String("Display Widgets [kallup]");
 }
 
 QIcon MyPropertySheetExtensionPlugin::icon() const
@@ -46,12 +47,12 @@ QIcon MyPropertySheetExtensionPlugin::icon() const
 
 QString MyPropertySheetExtensionPlugin::toolTip() const
 {
-    return QLatin1String("");
+    return QLatin1String();
 }
 
 QString MyPropertySheetExtensionPlugin::whatsThis() const
 {
-    return QLatin1String("");
+    return QLatin1String();
 }
 
 bool MyPropertySheetExtensionPlugin::isContainer() const
@@ -61,12 +62,16 @@ bool MyPropertySheetExtensionPlugin::isContainer() const
 
 QString MyPropertySheetExtensionPlugin::domXml() const
 {
-    return QLatin1String("<widget class=\"MyPropertySheetExtension\" name=\"myPropertySheetExtension\">\n</widget>\n");
+    return QLatin1String(
+    "<ui language=\"c++\">" \
+    "<widget class=\"MySheet\" name=\"mySheet\">\n</widget>\n" \
+    "</ui>\n"
+    );
 }
 
 QString MyPropertySheetExtensionPlugin::includeFile() const
 {
-    return QLatin1String("mypropertysheetextension.h");
+    return QLatin1String("mysheet.h");
 }
 #if QT_VERSION < 0x050000
 Q_EXPORT_PLUGIN2(mypropertysheetextensionplugin, MyPropertySheetExtensionPlugin)

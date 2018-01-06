@@ -1,2 +1,2 @@
-HEADERS += mypropertysheetextension.h
-SOURCES += mypropertysheetextension.cc
+HEADERS += mypropertysheetextension.h  mysheet.h
+SOURCES += mypropertysheetextension.cc mysheet.cc

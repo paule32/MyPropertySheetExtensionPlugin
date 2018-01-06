@@ -17,3 +17,4 @@ target.path = $$[QT_INSTALL_PLUGINS]/designer
 INSTALLS    += target
 
 include(mypropertysheetextension.pri)
+include(mypropertysheetextensionsub.pri)

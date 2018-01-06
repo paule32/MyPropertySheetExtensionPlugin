@@ -1,6 +1,7 @@
 #include "mysheet.h"
 #include "mypropertysheetextension.h"
 #include "mypropertysheetextensionplugin.h"
+#include "mypropertysheetextensionsub.h"
 
 #include <QtPlugin>
 
@@ -27,7 +28,7 @@ bool MyPropertySheetExtensionPlugin::isInitialized() const
 
 QWidget *MyPropertySheetExtensionPlugin::createWidget(QWidget *parent)
 {
-    return new MySheet(parent);
+    return new MyPropertySheetExtensionSub(parent);
 }
 
 QString MyPropertySheetExtensionPlugin::name() const
@@ -64,14 +65,14 @@ QString MyPropertySheetExtensionPlugin::domXml() const
 {
     return QLatin1String(
     "<ui language=\"c++\">" \
-    "<widget class=\"MySheet\" name=\"mySheet\">\n</widget>\n" \
+    "<widget class=\"MyPropertySheet\" name=\"myPropertySheet\">\n</widget>\n" \
     "</ui>\n"
     );
 }
 
 QString MyPropertySheetExtensionPlugin::includeFile() const
 {
-    return QLatin1String("mysheet.h");
+    return QLatin1String("mypropertysheet.h");
 }
 #if QT_VERSION < 0x050000
 Q_EXPORT_PLUGIN2(mypropertysheetextensionplugin, MyPropertySheetExtensionPlugin)

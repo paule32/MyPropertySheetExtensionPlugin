@@ -12,7 +12,8 @@ class MyPropertySheetExtensionSub : public
 {
 public:
     explicit MyPropertySheetExtensionSub(QWidget *parent);
-   
+
+protected:
     virtual QVariant property(int index) const;
     
     virtual int count() const;
@@ -32,6 +33,7 @@ public:
     
     virtual bool isVisible(int index) const;
     virtual bool isAttribute(int index) const;
+    
     virtual bool isChanged(int index) const;
 };
 

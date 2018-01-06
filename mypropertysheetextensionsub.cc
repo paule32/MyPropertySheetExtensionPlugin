@@ -6,58 +6,70 @@
 MyPropertySheetExtensionSub::MyPropertySheetExtensionSub(QWidget *parent)
     : MyPropertySheetExtension(parent)
 {
+    Q_UNUSED(parent)
 }
 
-#if 0
 int MyPropertySheetExtensionSub::count() const {
-    return QDesignerPropertySheetExtension::count();
+    return 0;
 }
 
 int MyPropertySheetExtensionSub::indexOf(const QString &name) const {
-    return QDesignerPropertySheetExtension::indexOf(name);
+    Q_UNUSED(name)
+    return 0;
 }
 
 QString MyPropertySheetExtensionSub::propertyName(int index) const {
-    return QDesignerPropertySheetExtension::propertyName(index);
+    Q_UNUSED(index)
+    return QString("");
 }
 
 QString MyPropertySheetExtensionSub::propertyGroup(int index) const {
-    return QDesignerPropertySheetExtension::propertyGroup(index);
+    Q_UNUSED(index)
+    return QString("");
 }
 
 void MyPropertySheetExtensionSub::setPropertyGroup(int index, const QString& group) {
-    MyPropertySheetExtension::setPropertyGroup(index, group);
+    Q_UNUSED(index)
+    Q_UNUSED(group)
 }
 
 bool MyPropertySheetExtensionSub::hasReset(int index) const {
-    return QDesignerPropertySheetExtension::hasReset(index);
+    Q_UNUSED(index)
+    return true;
 }
 
 bool MyPropertySheetExtensionSub::reset(int index) {
-    return QDesignerPropertySheetExtension::reset(index);
+    Q_UNUSED(index)
+    return true;
 }
 
 bool MyPropertySheetExtensionSub::isVisible(int index) const {
-    return QDesignerPropertySheetExtension::isVisible(index);
+    Q_UNUSED(index)
+    return true;
 }
 
 void MyPropertySheetExtensionSub::setVisible(int index, bool b) {
-    MyPropertySheetExtension::setVisible(int index, b);
+    Q_UNUSED(index)
+    Q_UNUSED(b)
 }
 
 bool MyPropertySheetExtensionSub::isAttribute(int index) const {
-    return QDesignerPropertySheetExtension::isAttribute(index);
+    Q_UNUSED(index)
+    return true;
 }
 
 void MyPropertySheetExtensionSub::setProperty(int index, const QVariant& value) {
-    QDesignerPropertySheetExtension::setProperty(index, value);
+    Q_UNUSED(index)
+    Q_UNUSED(value)
 }
 
-bool MyPropertySheetExtensionSub::isChanged(int index, bool changed) const {
-    return QDesignerPropertySheetExtension::isChanged(index, changed);
+bool MyPropertySheetExtensionSub::isChanged(int index) const {
+    Q_UNUSED(index)
+    return true;
 }
 
 void MyPropertySheetExtensionSub::setChanged(int index, bool changed) {
-    QDesignerPropertySheetExtension::setChanged(index, changed);
+    Q_UNUSED(index)
+    Q_UNUSED(changed)
 }
-#endif
+

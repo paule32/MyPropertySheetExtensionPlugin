@@ -1,9 +1,10 @@
 #ifndef MYPROPERTYSHEETEXTENSIONPLUGIN_H
 #define MYPROPERTYSHEETEXTENSIONPLUGIN_H
 
-#include <QtDesigner/QDesignerCustomWidgetInterface>
-#include <QtDesigner/QDesignerPropertySheetExtension>
-#include <QtDesigner/QDesignerCustomWidgetInterface>
+#include <QtUiPlugin/QDesignerCustomWidgetInterface>
+#include <QDesignerPropertySheetExtension>
+
+#include <QtPlugin>
 
 class MyPropertySheetExtensionPlugin
     : public QObject

@@ -3,8 +3,6 @@
 #include "mypropertysheetextensionplugin.h"
 #include "mypropertysheetextensionsub.h"
 
-#include <QtPlugin>
-
 MyPropertySheetExtensionPlugin::MyPropertySheetExtensionPlugin(QObject *parent)
     : QObject(parent)
 {
@@ -28,7 +26,9 @@ bool MyPropertySheetExtensionPlugin::isInitialized() const
 
 QWidget *MyPropertySheetExtensionPlugin::createWidget(QWidget *parent)
 {
-    return new MyPropertySheetExtensionSub(parent);
+//    MyPropertySheetExtensionSub *subser = new MyPropertySheetExtensionSub(parent);
+//    return subser;
+return 0;
 }
 
 QString MyPropertySheetExtensionPlugin::name() const

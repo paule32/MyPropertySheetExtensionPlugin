@@ -63,13 +63,18 @@ void MyPropertySheetExtensionSub::setProperty(int index, const QVariant& value) 
     Q_UNUSED(value)
 }
 
-bool MyPropertySheetExtensionSub::isChanged(int index) const {
+QVariant MyPropertySheetExtensionSub::property(int index) const {
     Q_UNUSED(index)
-    return true;
+    return 0;
 }
 
 void MyPropertySheetExtensionSub::setChanged(int index, bool changed) {
     Q_UNUSED(index)
     Q_UNUSED(changed)
+}
+
+bool MyPropertySheetExtensionSub::isChanged(int index) const {
+    Q_UNUSED(index)
+    return true;
 }
 

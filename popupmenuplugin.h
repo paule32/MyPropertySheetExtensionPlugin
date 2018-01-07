@@ -8,7 +8,7 @@ class PopupMenuPlugin :
     public QDesignerCustomWidgetInterface
 {
     Q_OBJECT
-    //Q_PLUGIN_METADATA(IID "org.qt-project.Qt.QDesignerCustomWidgetInterface")
+    Q_PLUGIN_METADATA(IID "org.qt-project.Qt.QDesignerCustomWidgetInterface")
     Q_INTERFACES(QDesignerCustomWidgetInterface)
 
 public:

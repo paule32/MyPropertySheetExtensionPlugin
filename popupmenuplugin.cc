@@ -1,8 +1,6 @@
 #include "popupmenu.h"
 #include "popupmenuplugin.h"
 
-#include "mypropertysheetextension.h"
-
 #include <QtPlugin>
 #include <QtDesigner/QExtensionManager>
 #include <QtDesigner/QDesignerPropertySheetExtension>
@@ -13,23 +11,11 @@ PopupMenuPlugin::PopupMenuPlugin(QObject *parent)
 {
 }
 
-void PopupMenuPlugin::initialize(QDesignerFormEditorInterface * formEditor)
+void PopupMenuPlugin::initialize(QDesignerFormEditorInterface * /*formEditor*/)
 {
     if (initialized)
         return;
 
-    QDesignerPropertySheetExtension *propertySheet  = 0;
-    QExtensionManager *manager = formEditor->extensionManager();
-    
-    propertySheet = qt_extension<MyPropertySheetExtension*>(manager,this);
-    //QDesignerPropertySheetExtension*>(manager, this);
-    //int index = propertySheet->indexOf(QLatin1String("margin"));
-    
-    //propertySheet->setVisible(false);
-    //propertySheet->setProperty(index, 10);
-    //propertySheet->setChanged(index, true);
-    
-    //delete propertySheet;
     initialized = true;
 }
 

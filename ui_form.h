@@ -26,6 +26,8 @@ public:
     PopupMenu *popupMenu_2;
     PopupMenu *popupMenu_3;
     PopupMenu *popupMenu_4;
+    PopupMenu *popupMenu_5;
+    PopupMenu *popupMenu_6;
 
     void setupUi(QWidget *Form)
     {
@@ -44,6 +46,12 @@ public:
         popupMenu_4 = new PopupMenu(Form);
         popupMenu_4->setObjectName(QLatin1String("popupMenu_4"));
         popupMenu_4->setGeometry(QRect(180, 200, 80, 80));
+        popupMenu_5 = new PopupMenu(Form);
+        popupMenu_5->setObjectName(QLatin1String("popupMenu_5"));
+        popupMenu_5->setGeometry(QRect(110, 50, 80, 80));
+        popupMenu_6 = new PopupMenu(Form);
+        popupMenu_6->setObjectName(QLatin1String("popupMenu_6"));
+        popupMenu_6->setGeometry(QRect(270, 210, 80, 80));
 
         retranslateUi(Form);
 
